@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Dividendos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gerenciamento de Dividendos</h1>
+    <div class="container">
+        <div class="formulario">
+            <h2>Adicionar Dividendos</h2>
+            <form id="formAdicionarDividendo">
+                <label for="nomeAtivoDividendo">Nome do Ativo:</label>
+                <input type="text" id="nomeAtivoDividendo" required>
+
+                <label for="quantidadeDividendo">Quantidade de Dividendos (R$):</label>
+                <input type="number" id="quantidadeDividendo" step="any" required>
+
+                <button type="button" onclick="adicionarDividendo()">Adicionar Dividendos</button>
+            </form>
+
+            <h2>Remover Dividendos</h2>
+            <form id="formRemoverDividendo">
+                <label for="nomeAtivoRemoverDividendo">Nome do Ativo:</label>
+                <input type="text" id="nomeAtivoRemoverDividendo" required>
+
+                <label for="quantidadeRemoverDividendo">Quantidade a Remover (R$):</label>
+                <input type="number" id="quantidadeRemoverDividendo" step="any" required>
+
+                <button type="button" onclick="removerDividendo()">Remover Dividendos</button>
+            </form>
+
+            <div id="listaDividendos" hidden></div>
+        </div>
+
+        <div class="graficos">
+            <h2>Dividendos por Ativo</h2>
+            <canvas id="graficoDividendos"></canvas>
+            <button onclick="voltarParaPaginaPrincipal()">Voltar para Página Principal</button>
+            <button type="button" onclick="removerTodosDividendos()">Remover Todos os Dividendos</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="dividendos.js"></script>
+</body>
+</html>
